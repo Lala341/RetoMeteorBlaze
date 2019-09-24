@@ -1,0 +1,76 @@
+<head>
+  <title>My first app in meteor</title>
+</head>
+<body>
+  <h1>Registrar Evento</h1>
+  <br>
+  {{> evento}}
+  <br>
+  <br>
+  <h1>Eventos</h1>
+  <br>
+  {{> eventos}}
+  
+</body>
+
+
+
+<template name="evento">
+  <form >
+  <input  type="text" name="nombre"  placeholder="Nombre" >
+ 
+  <input  type="text" name="descripcion"  placeholder="Descripcion" >
+
+  <input type="text" name="responsable"  placeholder="Responsable" >
+
+  <input  type="date" name="fechainicio"  placeholder="Fecha inicio" >
+
+  <input  type="date" name="fechafin"  placeholder="Fecha fin" >
+
+  <input  type="text" name="ubicacion"  placeholder="ubicacion" >
+
+  <input  type="submit" value="Add Event">
+</form>
+
+  
+</template>
+<template name="eventos">
+
+    <table class="egt">
+
+        <tr>
+      
+          <th>Nombre</th>
+      
+          <th>Descripcion</th>
+      
+          <th>Responsable</th>
+
+          <th>Fecha inicio</th>
+
+          <th>Fecha fin</th>
+
+          <th>Ubicacion</th>
+      
+        </tr>
+      
+        {{#each eventosCollection}}
+        <tr>
+            <td>{{nombre}}</td>
+            <td>{{descripcion}}</td>
+            <td>{{responsable}} </td>
+            <td>{{fechainicio}} </td>
+            <td>{{fechafin}} </td>
+            <td> {{ubicacion}} </td>
+        </tr>
+        
+     
+    {{/each}}
+        
+        
+      
+      
+      </table>
+    
+    
+</template>
